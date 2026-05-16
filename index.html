@@ -1,323 +1,487 @@
 ﻿<!DOCTYPE html>
 <html lang="es">
-
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+<meta name="description" content="308 Agency — Agencia de marketing digital premium especializada en redes sociales, publicidad y branding.">
 <title>308 Agency | Marketing Digital Premium</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+/* ===== RESET & BASE ===== */
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:#0C0B08;color:#fff;overflow-x:hidden;}
+a{text-decoration:none;}
+img{max-width:100%;display:block;}
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* ===== SCROLL REVEAL ===== */
+.reveal{opacity:0;transform:translateY(32px);transition:opacity .7s ease,transform .7s ease;}
+.reveal.visible{opacity:1;transform:translateY(0);}
+.reveal-left{opacity:0;transform:translateX(-40px);transition:opacity .75s ease,transform .75s ease;}
+.reveal-left.visible{opacity:1;transform:translateX(0);}
+.reveal-right{opacity:0;transform:translateX(40px);transition:opacity .75s ease,transform .75s ease;}
+.reveal-right.visible{opacity:1;transform:translateX(0);}
+.reveal-scale{opacity:0;transform:scale(.88);transition:opacity .65s ease,transform .65s ease;}
+.reveal-scale.visible{opacity:1;transform:scale(1);}
+.delay-1{transition-delay:.1s;} .delay-2{transition-delay:.2s;}
+.delay-3{transition-delay:.3s;} .delay-4{transition-delay:.4s;}
+.delay-5{transition-delay:.5s;} .delay-6{transition-delay:.6s;}
+
+/* ===== HEADER / NAV ===== */
+header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(12,11,8,.96);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);padding:14px 6%;border-bottom:1px solid rgba(201,168,76,.1);transition:padding .3s,background .3s;}
+header.scrolled{padding:10px 6%;background:rgba(8,8,5,.99);}
+nav{display:flex;justify-content:space-between;align-items:center;}
+.nav-logo{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:4px 14px;height:44px;transition:.25s;}
+.nav-logo img{height:32px;width:auto;display:block;max-width:140px;}
+.nav-logo:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,168,76,.3);}
+.menu{display:flex;gap:28px;align-items:center;}
+.menu a{color:rgba(255,255,255,.75);font-size:.88rem;font-weight:500;transition:.3s;letter-spacing:.3px;}
+.menu a:hover,.menu a.active{color:#C9A84C;}
+.nav-cta{padding:9px 24px;border-radius:50px;background:#C9A84C;color:#0C0B08 !important;font-weight:700 !important;font-size:.83rem !important;}
+.nav-cta:hover{background:#D4AF6A;transform:translateY(-2px);}
+
+/* === HAMBURGER === */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:6px;z-index:1001;background:none;border:none;}
+.hamburger span{display:block;width:24px;height:2px;background:#fff;border-radius:2px;transition:.3s;}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg);}
+.hamburger.open span:nth-child(2){opacity:0;transform:scaleX(0);}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg);}
+
+/* === MOBILE MENU OVERLAY === */
+.mobile-nav{position:fixed;inset:0;background:rgba(8,7,4,.97);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);z-index:999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:30px;opacity:0;pointer-events:none;transition:opacity .4s;}
+.mobile-nav.open{opacity:1;pointer-events:all;}
+.mobile-nav a{color:rgba(255,255,255,.8);font-size:1.35rem;font-weight:600;font-family:'Montserrat',sans-serif;letter-spacing:.5px;transition:.3s;}
+.mobile-nav a:hover{color:#C9A84C;}
+.mobile-nav .mob-cta{display:inline-block;margin-top:8px;padding:14px 44px;border-radius:50px;background:#C9A84C;color:#0C0B08;font-weight:800;font-size:1rem;}
+
+/* ===== HERO ===== */
+.hero{min-height:100vh;display:flex;align-items:center;padding:110px 6% 70px;position:relative;overflow:hidden;background:radial-gradient(ellipse 70% 60% at 70% 35%,rgba(201,168,76,.1) 0%,transparent 60%),radial-gradient(ellipse 50% 40% at 20% 80%,rgba(26,22,18,.6) 0%,transparent 50%),#0C0B08;}
+.hero-particles{position:absolute;inset:0;pointer-events:none;overflow:hidden;}
+.particle{position:absolute;background:#C9A84C;border-radius:50%;animation:floatParticle linear infinite;opacity:0;}
+@keyframes floatParticle{0%{transform:translateY(100vh);opacity:0;}10%{opacity:.5;}90%{opacity:.3;}100%{transform:translateY(-10vh) translateX(40px);opacity:0;}}
+.hero-inner{max-width:720px;position:relative;z-index:1;}
+.hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);border-radius:50px;padding:7px 18px;margin-bottom:22px;font-size:.76rem;font-weight:600;color:#C9A84C;letter-spacing:1.5px;text-transform:uppercase;animation:fadeDown .8s ease .2s both;}
+.hero-badge .dot{width:7px;height:7px;background:#C9A84C;border-radius:50%;animation:pulse 2s ease infinite;}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-18px);}to{opacity:1;transform:translateY(0);}}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(1.5);}}
+.hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.2rem,5.5vw,5rem);font-weight:900;line-height:1.06;margin-bottom:20px;letter-spacing:-1px;animation:fadeUp .9s ease .4s both;}
+.hero h1 em{font-style:normal;background:linear-gradient(135deg,#C9A84C 0%,#DFC27A 50%,#C9A84C 100%);background-size:200%;-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;animation:shimmer 3s ease 1.5s infinite;}
+@keyframes shimmer{0%,100%{background-position:0%;}50%{background-position:100%;}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px);}to{opacity:1;transform:translateY(0);}}
+.hero p{font-size:1.05rem;color:rgba(255,255,255,.7);line-height:1.85;margin-bottom:34px;max-width:580px;animation:fadeUp .9s ease .6s both;}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;animation:fadeUp .9s ease .8s both;}
+.btn-wa{display:inline-flex;align-items:center;gap:10px;padding:15px 36px;border-radius:50px;background:linear-gradient(135deg,#25D366,#128C7E);color:#fff;font-weight:700;font-size:.94rem;transition:.3s;box-shadow:0 8px 28px rgba(37,211,102,.25);}
+.btn-wa:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(37,211,102,.4);}
+.btn-wa svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+.btn-ghost{display:inline-flex;align-items:center;gap:8px;padding:15px 36px;border-radius:50px;border:1px solid rgba(201,168,76,.35);color:#C9A84C;font-weight:600;font-size:.94rem;transition:.3s;}
+.btn-ghost:hover{border-color:#C9A84C;background:rgba(201,168,76,.08);transform:translateY(-4px);}
+.hero-nums{display:flex;gap:36px;margin-top:50px;flex-wrap:wrap;animation:fadeUp .9s ease 1s both;}
+.h-num{display:flex;flex-direction:column;}
+.h-num .n{font-family:'Montserrat',sans-serif;font-size:2rem;font-weight:900;color:#C9A84C;line-height:1;}
+.h-num .l{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:4px;line-height:1.3;}
+.h-divider{width:1px;background:rgba(255,255,255,.1);align-self:stretch;}
+
+/* ===== SECTION BASE ===== */
+.section{padding:90px 6%;}
+.section.alt{background:#0A0905;}
+.eyebrow{display:block;text-align:center;font-size:.73rem;font-weight:700;letter-spacing:3px;color:#C9A84C;text-transform:uppercase;margin-bottom:12px;}
+.sec-title{text-align:center;font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.2;margin-bottom:14px;}
+.sec-sub{text-align:center;font-size:.93rem;color:rgba(255,255,255,.58);max-width:520px;margin:0 auto 50px;line-height:1.8;}
+
+/* ===== SERVICES GRID ===== */
+.svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;}
+.svc-card{background:#131109;border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:34px 26px;transition:.4s;position:relative;overflow:hidden;}
+.svc-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,168,76,.06),transparent);opacity:0;transition:.4s;}
+.svc-card:hover{border-color:rgba(201,168,76,.28);transform:translateY(-8px);box-shadow:0 20px 50px rgba(0,0,0,.3);}
+.svc-card:hover::after{opacity:1;}
+.svc-icon{font-size:2rem;margin-bottom:14px;}
+.svc-card h3{font-size:1rem;font-weight:700;margin-bottom:9px;}
+.svc-card p{font-size:.85rem;color:rgba(255,255,255,.58);line-height:1.72;}
+
+/* ===== SOCIAL MEDIA MANAGEMENT ===== */
+.social-section{padding:90px 6%;background:#0A0905;}
+.social-inner{display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;}
+.social-text .badge{display:inline-block;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);color:#C9A84C;font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;padding:5px 16px;border-radius:50px;margin-bottom:18px;}
+.social-text h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:800;line-height:1.2;margin-bottom:14px;}
+.social-text .gold{color:#C9A84C;}
+.social-text p{font-size:.9rem;color:rgba(255,255,255,.68);line-height:1.85;margin-bottom:10px;}
+.social-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:18px;}
+.social-list li{display:flex;align-items:center;gap:10px;font-size:.88rem;color:rgba(255,255,255,.8);}
+.social-list li::before{content:'✦';color:#C9A84C;font-size:.65rem;flex-shrink:0;}
+.platforms-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;}
+.plat-card{background:#131109;border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:22px 14px;text-align:center;transition:.35s;}
+.plat-card:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.25);background:#181612;}
+.plat-icon{font-size:2.1rem;margin-bottom:9px;}
+.plat-card h4{font-size:.82rem;font-weight:700;margin-bottom:5px;}
+.plat-card p{font-size:.73rem;color:rgba(255,255,255,.45);line-height:1.5;}
+
+/* ===== STATS STRIP ===== */
+.stats-sec{padding:70px 6%;background:#0F0E0B;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);border-radius:20px;overflow:hidden;border:1px solid rgba(201,168,76,.1);}
+.stat{padding:48px 20px;text-align:center;background:#0F0E0B;transition:.3s;border-right:1px solid rgba(255,255,255,.05);}
+.stat:last-child{border-right:none;}
+.stat:hover{background:#181612;}
+.stat-n{font-family:'Montserrat',sans-serif;font-size:2.8rem;font-weight:900;background:linear-gradient(135deg,#C9A84C,#DFC27A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;line-height:1;}
+.stat-l{font-size:.8rem;color:rgba(255,255,255,.48);margin-top:8px;font-weight:500;}
+
+/* ===== WHY US ===== */
+.why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.why-card{background:#131109;border:1px solid rgba(255,255,255,.06);border-radius:18px;padding:32px 22px;text-align:center;transition:.35s;}
+.why-card:hover{border-color:rgba(201,168,76,.2);transform:translateY(-6px);}
+.why-icon{width:58px;height:58px;border-radius:50%;margin:0 auto 14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;background:rgba(201,168,76,.08);border:1px solid rgba(201,168,76,.15);}
+.why-card h4{font-size:.95rem;font-weight:700;margin-bottom:8px;}
+.why-card p{font-size:.83rem;color:rgba(255,255,255,.55);line-height:1.65;}
+
+/* ===== SOCIAL CONNECT CTA ===== */
+.connect-section{padding:90px 6%;}
+.connect-box{background:linear-gradient(135deg,#131109,#1A1714);border:1px solid rgba(201,168,76,.18);border-radius:28px;padding:70px 60px;text-align:center;position:relative;overflow:hidden;}
+.connect-box::before{content:'';position:absolute;top:-60%;left:-30%;width:200%;height:200%;background:radial-gradient(ellipse,rgba(201,168,76,.07) 0%,transparent 55%);pointer-events:none;}
+.connect-box h2{font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;margin-bottom:14px;position:relative;z-index:1;}
+.connect-box p{font-size:.93rem;color:rgba(255,255,255,.62);margin-bottom:40px;max-width:500px;margin-left:auto;margin-right:auto;line-height:1.8;position:relative;z-index:1;}
+.soc-row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.soc-btn{display:inline-flex;align-items:center;gap:9px;padding:13px 26px;border-radius:50px;font-weight:700;font-size:.88rem;transition:.3s;border:none;cursor:pointer;color:#fff;}
+.soc-btn:hover{transform:translateY(-4px);}
+.soc-btn svg{width:18px;height:18px;fill:#fff;flex-shrink:0;}
+.soc-wa{background:linear-gradient(135deg,#25D366,#128C7E);box-shadow:0 8px 24px rgba(37,211,102,.3);}
+.soc-wa:hover{box-shadow:0 14px 36px rgba(37,211,102,.45);}
+.soc-ig{background:linear-gradient(135deg,#f09433,#e6683c,#dc2743,#cc2366,#bc1888);box-shadow:0 8px 24px rgba(220,39,67,.25);}
+.soc-ig:hover{box-shadow:0 14px 36px rgba(220,39,67,.4);}
+.soc-fb{background:linear-gradient(135deg,#1877f2,#166fe5);box-shadow:0 8px 24px rgba(24,119,242,.25);}
+.soc-fb:hover{box-shadow:0 14px 36px rgba(24,119,242,.4);}
+.soc-tt{background:#000;box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.soc-tt:hover{box-shadow:0 14px 36px rgba(105,201,208,.3);}
+.soc-li{background:linear-gradient(135deg,#0077b5,#005885);box-shadow:0 8px 24px rgba(0,119,181,.2);}
+.soc-li:hover{box-shadow:0 14px 36px rgba(0,119,181,.4);}
+
+/* ===== FOOTER ===== */
+footer{background:#080604;padding:52px 6% 24px;border-top:1px solid rgba(201,168,76,.1);}
+.footer-grid{display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:50px;margin-bottom:40px;}
+.logo-o{display:inline-flex;align-items:center;justify-content:center;border:2.5px solid #C9A84C;border-radius:50%;width:.8em;height:.8em;color:#C9A84C;font-weight:900;vertical-align:middle;margin:0 1px;}
+.f-brand .f-logo-wrap{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:4px 12px;height:38px;margin-bottom:14px;}
+.f-brand .f-logo-wrap img{height:28px;width:auto;}
+.f-brand p{font-size:.85rem;color:rgba(255,255,255,.45);line-height:1.8;max-width:270px;}
+.f-social{display:flex;gap:9px;margin-top:16px;}
+.f-soc{width:38px;height:38px;border-radius:10px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);display:flex;align-items:center;justify-content:center;font-size:.95rem;transition:.3s;color:rgba(255,255,255,.55);}
+.f-soc:hover{background:rgba(201,168,76,.12);border-color:rgba(201,168,76,.3);color:#C9A84C;transform:translateY(-3px);}
+.f-col h5{font-size:.72rem;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:rgba(201,168,76,.7);margin-bottom:16px;}
+.f-col a{display:block;color:rgba(255,255,255,.5);font-size:.86rem;margin-bottom:10px;transition:.3s;}
+.f-col a:hover{color:#C9A84C;}
+.f-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:22px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px;}
+.f-bottom p{font-size:.8rem;color:rgba(255,255,255,.3);}
+
+/* ===== FLOATING WA BUTTON ===== */
+.wa-float{position:fixed;bottom:24px;right:24px;z-index:500;width:56px;height:56px;border-radius:50%;background:linear-gradient(135deg,#25D366,#128C7E);display:flex;align-items:center;justify-content:center;box-shadow:0 6px 24px rgba(37,211,102,.45);transition:.3s;animation:waPulse 2.5s ease infinite;}
+.wa-float:hover{transform:scale(1.12);box-shadow:0 10px 36px rgba(37,211,102,.6);}
+.wa-float svg{width:28px;height:28px;fill:#fff;}
+@keyframes waPulse{0%,100%{box-shadow:0 6px 24px rgba(37,211,102,.45);}50%{box-shadow:0 6px 44px rgba(37,211,102,.65),0 0 0 8px rgba(37,211,102,.08);}}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .social-inner{grid-template-columns:1fr;gap:44px;}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:repeat(2,1fr);}
+  .footer-grid{grid-template-columns:1fr 1fr;}
 }
-
-body{
-    font-family:'Poppins',sans-serif;
-    background:#0C0B08;
-    color:white;
-    overflow-x:hidden;
-}
-
-a{
-    text-decoration:none;
-}
-
-header{
-    position:fixed;
-    top:0;
-    width:100%;
-    z-index:1000;
-    background:rgba(12,11,8,.95);
-    backdrop-filter:blur(10px);
-    padding:20px 8%;
-}
-
-nav{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-}
-
-.logo{
-    font-size:2rem;
-    font-weight:800;
-}
-
-.logo span{
-    color:#C9A84C;
-}
-
-.nav-logo{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:4px 14px;height:46px;transition:.25s;}
-.nav-logo img{height:34px;width:auto;display:block;}
-.nav-logo:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,168,76,.35);}
-
-.menu{
-    display:flex;
-    gap:30px;
-}
-
-.menu a{
-    color:white;
-    transition:.3s;
-}
-
-.menu a:hover{
-    color:#C9A84C;
-}
-
-.hero{
-    height:100vh;
-    display:flex;
-    align-items:center;
-    padding:0 8%;
-    background:
-    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
-    url('assets/img/hero.jpg') center/cover;
-}
-
-.hero-content{
-    max-width:700px;
-}
-
-.hero h1{
-    font-size:4.5rem;
-    line-height:1.1;
-    margin-bottom:20px;
-}
-
-.hero p{
-    font-size:1.2rem;
-    margin-bottom:40px;
-    color:#d1d5db;
-}
-
-.btn{
-    display:inline-block;
-    padding:16px 40px;
-    border-radius:50px;
-    background:#C9A84C;
-    color:white;
-    font-weight:700;
-    transition:.3s;
-}
-
-.btn:hover{
-    transform:translateY(-5px);
-    background:#D4AF6A;
-}
-
-.section{
-    padding:100px 8%;
-}
-
-.section-title{
-    text-align:center;
-    margin-bottom:60px;
-}
-
-.section-title h2{
-    font-size:3rem;
-}
-
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:#181612;
-    padding:40px;
-    border-radius:20px;
-    transition:.3s;
-}
-
-.card:hover{
-    transform:translateY(-10px);
-}
-
-.card h3{
-    color:#C9A84C;
-    margin-bottom:20px;
-}
-
-.stats{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.stat-box{
-    background:#181612;
-    padding:50px;
-    text-align:center;
-    border-radius:20px;
-}
-
-.stat-box h3{
-    font-size:3rem;
-    color:#C9A84C;
-}
-
-.cta{
-    background:linear-gradient(90deg,#1A1714,#C9A84C);
-    padding:80px;
-    border-radius:25px;
-    text-align:center;
-}
-
-footer{
-    background:#080604;
-    padding:40px;
-    text-align:center;
-}
-
 @media(max-width:768px){
-
-    .hero h1{
-        font-size:2.5rem;
-    }
-
-    .menu{
-        display:none;
-    }
-
+  .menu{display:none;}
+  .hamburger{display:flex;}
+  header{padding:12px 5%;}
+  .hero{padding:86px 5% 50px;}
+  .hero-nums{gap:18px;}
+  .h-divider{display:none;}
+  .h-num .n{font-size:1.7rem;}
+  .section,.section.alt,.connect-section,.social-section{padding:60px 5%;}
+  .svc-grid{grid-template-columns:1fr 1fr;}
+  .platforms-grid{grid-template-columns:repeat(2,1fr);}
+  .stats-grid{grid-template-columns:repeat(2,1fr);}
+  .stat{padding:36px 14px;}
+  .stat-n{font-size:2.2rem;}
+  .connect-box{padding:44px 24px;}
+  .footer-grid{grid-template-columns:1fr;gap:28px;}
+  .f-bottom{flex-direction:column;text-align:center;}
 }
-
+@media(max-width:480px){
+  .hero h1{font-size:1.95rem;}
+  .hero-ctas{flex-direction:column;align-items:stretch;}
+  .btn-wa,.btn-ghost{justify-content:center;}
+  .svc-grid{grid-template-columns:1fr;}
+  .platforms-grid{grid-template-columns:repeat(2,1fr);}
+  .why-grid{grid-template-columns:1fr 1fr;}
+  .soc-row{gap:9px;}
+  .soc-btn{padding:12px 18px;font-size:.82rem;}
+  .connect-box{padding:36px 18px;}
+}
 </style>
-
 </head>
-
 <body>
 
-<header>
+<!-- FLOATING WA -->
+<a href="https://wa.me/573003083080" target="_blank" rel="noopener noreferrer" class="wa-float" aria-label="Escríbenos por WhatsApp">
+  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
 
-<nav>
-
-<a href="index.html" class="nav-logo"><img src="imagenes 308 agency/logo 2.png" alt="308 Agency"></a>
-
-<div class="menu">
-<a href="index.html">Inicio</a>
-<a href="awareness.html">Awareness</a>
-<a href="consideration.html">Servicios</a>
-<a href="conversion.html">Conversión</a>
-</div>
-
-</nav>
-
+<!-- HEADER -->
+<header id="mainHeader">
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="imagenes 308 agency/logo 2.png" alt="308 Agency Logo"></a>
+    <div class="menu">
+      <a href="index.html" class="active">Inicio</a>
+      <a href="awareness.html">Awareness</a>
+      <a href="consideration.html">Servicios</a>
+      <a href="conversion.html">Planes</a>
+      <a href="https://wa.me/573003083080" target="_blank" rel="noopener" class="nav-cta">WhatsApp ›</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
 </header>
 
+<!-- MOBILE NAV -->
+<div class="mobile-nav" id="mobileNav" role="dialog" aria-label="Menú de navegación">
+  <a href="index.html">Inicio</a>
+  <a href="awareness.html">Awareness</a>
+  <a href="consideration.html">Servicios</a>
+  <a href="conversion.html">Planes</a>
+  <a href="https://wa.me/573003083080" target="_blank" rel="noopener" class="mob-cta">Escríbenos por WhatsApp</a>
+</div>
+
+<!-- ===== HERO ===== -->
 <section class="hero">
-
-<div class="hero-content">
-
-<h1>
-Escalamos marcas mediante estrategias digitales de alto impacto
-</h1>
-
-<p>
-Creamos experiencias digitales enfocadas en crecimiento, posicionamiento y conversión empresarial.
-</p>
-
-<a href="conversion.html" class="btn">
-Agenda una Consultoría
-</a>
-
-</div>
-
+  <div class="hero-particles" id="particles"></div>
+  <div class="hero-inner">
+    <div class="hero-badge"><span class="dot"></span>Agencia de Marketing Digital Premium</div>
+    <h1>Escalamos marcas con estrategias <em>de alto impacto</em></h1>
+    <p>Diseñamos ecosistemas digitales completos: branding, redes sociales, publicidad y automatización enfocados en resultados reales y medibles.</p>
+    <div class="hero-ctas">
+      <a href="https://wa.me/573003083080" target="_blank" rel="noopener" class="btn-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Escríbenos por WhatsApp
+      </a>
+      <a href="awareness.html" class="btn-ghost">Conocer más ↓</a>
+    </div>
+    <div class="hero-nums">
+      <div class="h-num"><span class="n" data-count="120" data-prefix="+">0</span><span class="l">% Crecimiento<br>promedio</span></div>
+      <div class="h-divider"></div>
+      <div class="h-num"><span class="n" data-count="300" data-prefix="+">0</span><span class="l">Campañas<br>ejecutadas</span></div>
+      <div class="h-divider"></div>
+      <div class="h-num"><span class="n" data-count="50" data-prefix="+">0</span><span class="l">Marcas<br>escaladas</span></div>
+      <div class="h-divider"></div>
+      <div class="h-num"><span class="n" data-count="96" data-suffix="%">0</span><span class="l">Clientes<br>satisfechos</span></div>
+    </div>
+  </div>
 </section>
 
+<!-- ===== SERVICIOS ===== -->
 <section class="section">
-
-<div class="section-title">
-<h2>¿Por qué elegir 308 Agency?</h2>
-</div>
-
-<div class="grid">
-
-<div class="card">
-<h3>Branding Premium</h3>
-<p>
-Construimos marcas memorables enfocadas en autoridad y crecimiento empresarial.
-</p>
-</div>
-
-<div class="card">
-<h3>Automatización</h3>
-<p>
-Optimizamos procesos para generar clientes potenciales automáticamente.
-</p>
-</div>
-
-<div class="card">
-<h3>Growth Marketing</h3>
-<p>
-Estrategias digitales diseñadas para aumentar ventas y reconocimiento.
-</p>
-</div>
-
-</div>
-
+  <span class="eyebrow reveal">Nuestros servicios</span>
+  <h2 class="sec-title reveal">Todo lo que tu marca necesita</h2>
+  <p class="sec-sub reveal">Un ecosistema completo de soluciones digitales para escalar tu negocio de forma sistemática.</p>
+  <div class="svc-grid">
+    <div class="svc-card reveal delay-1"><div class="svc-icon">🎨</div><h3>Branding Estratégico</h3><p>Identidades visuales que generan autoridad, confianza y recordación instantánea en el mercado.</p></div>
+    <div class="svc-card reveal delay-2"><div class="svc-icon">📱</div><h3>Gestión de Redes</h3><p>Contenido estratégico, consistente y orientado a conversión en todas las plataformas digitales.</p></div>
+    <div class="svc-card reveal delay-3"><div class="svc-icon">📢</div><h3>Publicidad Digital</h3><p>Campañas en Meta Ads, Google Ads y TikTok Ads con el mayor ROI posible para tu inversión.</p></div>
+    <div class="svc-card reveal delay-4"><div class="svc-icon">🔍</div><h3>SEO Estratégico</h3><p>Posicionamiento orgánico que genera tráfico calificado de forma constante y sostenida.</p></div>
+    <div class="svc-card reveal delay-5"><div class="svc-icon">⚡</div><h3>Automatización</h3><p>Sistemas que generan y nutren leads 24/7 sin intervención manual continua.</p></div>
+    <div class="svc-card reveal delay-6"><div class="svc-icon">🚀</div><h3>Funnels de Venta</h3><p>Embudos estratégicos que convierten visitantes desconocidos en clientes fieles paso a paso.</p></div>
+  </div>
 </section>
 
-<section class="section">
-
-<div class="stats">
-
-<div class="stat-box">
-<h3>+120%</h3>
-<p>Crecimiento Promedio</p>
-</div>
-
-<div class="stat-box">
-<h3>+300</h3>
-<p>Campañas Ejecutadas</p>
-</div>
-
-<div class="stat-box">
-<h3>+50</h3>
-<p>Marcas Escaladas</p>
-</div>
-
-</div>
-
+<!-- ===== GESTIÓN DE REDES SOCIALES ===== -->
+<section class="social-section">
+  <div class="social-inner">
+    <div class="social-text reveal-left">
+      <span class="badge">Gestión de Redes Sociales</span>
+      <h2>Tus redes en manos de <span class="gold">expertos</span></h2>
+      <p>No basta con publicar. Necesitas una estrategia de contenido coherente, constante y orientada a generar seguidores reales, alcance orgánico y conversiones concretas.</p>
+      <p>En 308 Agency manejamos tu presencia en todas las plataformas con contenido de alto impacto adaptado al lenguaje de cada red.</p>
+      <ul class="social-list">
+        <li>Calendario editorial mensual personalizado</li>
+        <li>Diseño de piezas gráficas y videos para cada red</li>
+        <li>Copywriting estratégico orientado a conversión</li>
+        <li>Gestión de comunidad y respuesta a mensajes</li>
+        <li>Analítica mensual con métricas reales y accionables</li>
+        <li>Estrategia de hashtags y posicionamiento orgánico</li>
+      </ul>
+    </div>
+    <div class="platforms-grid">
+      <div class="plat-card reveal-scale delay-1"><div class="plat-icon">📸</div><h4>Instagram</h4><p>Feeds, reels y stories que generan engagement real</p></div>
+      <div class="plat-card reveal-scale delay-2"><div class="plat-icon">👥</div><h4>Facebook</h4><p>Comunidad, fanpage y campañas de alcance masivo</p></div>
+      <div class="plat-card reveal-scale delay-3"><div class="plat-icon">🎵</div><h4>TikTok</h4><p>Contenido viral que conecta con audiencias jóvenes</p></div>
+      <div class="plat-card reveal-scale delay-4"><div class="plat-icon">💼</div><h4>LinkedIn</h4><p>Posicionamiento B2B y marca empleadora premium</p></div>
+      <div class="plat-card reveal-scale delay-5"><div class="plat-icon">▶️</div><h4>YouTube</h4><p>Video marketing y SEO en la 2.ª búsqueda más usada</p></div>
+      <div class="plat-card reveal-scale delay-6"><div class="plat-icon">🐦</div><h4>X / Twitter</h4><p>Conversación en tiempo real y tendencias de marca</p></div>
+    </div>
+  </div>
 </section>
 
-<section class="section">
-
-<div class="cta">
-
-<h2 style="font-size:3rem;margin-bottom:20px;">
-Transforma tu negocio hoy
-</h2>
-
-<p style="margin-bottom:30px;">
-Lleva tu marca al siguiente nivel con estrategias digitales premium.
-</p>
-
-<a href="conversion.html" class="btn">
-Comenzar Ahora
-</a>
-
-</div>
-
+<!-- ===== STATS ===== -->
+<section class="stats-sec">
+  <div class="stats-grid">
+    <div class="stat reveal"><div class="stat-n" data-count="120" data-prefix="+">0</div><div class="stat-l">% Crecimiento promedio</div></div>
+    <div class="stat reveal delay-1"><div class="stat-n" data-count="300" data-prefix="+">0</div><div class="stat-l">Campañas ejecutadas</div></div>
+    <div class="stat reveal delay-2"><div class="stat-n" data-count="50" data-prefix="+">0</div><div class="stat-l">Marcas escaladas</div></div>
+    <div class="stat reveal delay-3"><div class="stat-n" data-count="96" data-suffix="%">0</div><div class="stat-l">Clientes satisfechos</div></div>
+  </div>
 </section>
 
+<!-- ===== POR QUÉ NOSOTROS ===== -->
+<section class="section alt">
+  <span class="eyebrow reveal">Por qué elegirnos</span>
+  <h2 class="sec-title reveal">Lo que nos diferencia</h2>
+  <p class="sec-sub reveal">No somos una agencia genérica. Somos tu equipo estratégico de crecimiento digital enfocado en resultados reales.</p>
+  <div class="why-grid">
+    <div class="why-card reveal delay-1"><div class="why-icon">🎯</div><h4>Enfoque en resultados</h4><p>Cada decisión orientada a métricas reales: ventas, leads y ROI medible.</p></div>
+    <div class="why-card reveal delay-2"><div class="why-icon">📊</div><h4>Basados en datos</h4><p>Testeo y optimización constante. Decisiones con información, no con intuición.</p></div>
+    <div class="why-card reveal delay-3"><div class="why-icon">⚙️</div><h4>Tecnología avanzada</h4><p>Las herramientas más modernas del mercado para maximizar tu eficiencia digital.</p></div>
+    <div class="why-card reveal delay-4"><div class="why-icon">🤝</div><h4>Comunicación directa</h4><p>Manager dedicado, reportes semanales y acceso total a tus métricas.</p></div>
+  </div>
+</section>
+
+<!-- ===== CONÉCTATE EN REDES ===== -->
+<section class="connect-section">
+  <div class="connect-box reveal">
+    <h2>Conéctate con nosotros<br>en redes sociales</h2>
+    <p>Síguenos, escríbenos y descubre cómo llevamos marcas al siguiente nivel. El mejor canal es el que tú prefieras.</p>
+    <div class="soc-row">
+      <a href="https://wa.me/573003083080" target="_blank" rel="noopener" class="soc-btn soc-wa">
+        <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884zm8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        WhatsApp
+      </a>
+      <a href="https://instagram.com/308agency" target="_blank" rel="noopener" class="soc-btn soc-ig">
+        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+        Instagram
+      </a>
+      <a href="https://facebook.com/308agency" target="_blank" rel="noopener" class="soc-btn soc-fb">
+        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+        Facebook
+      </a>
+      <a href="https://tiktok.com/@308agency" target="_blank" rel="noopener" class="soc-btn soc-tt">
+        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.07-.14 1.61.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z" fill="#fff"/></svg>
+        TikTok
+      </a>
+      <a href="https://linkedin.com/company/308agency" target="_blank" rel="noopener" class="soc-btn soc-li">
+        <svg viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
 <footer>
-
-<p>
-© 2026 308 Agency — Todos los derechos reservados
-</p>
-
+  <div class="footer-grid">
+    <div class="f-brand">
+      <a href="index.html" class="f-logo-wrap"><img src="imagenes 308 agency/logo 2.png" alt="308 Agency"></a>
+      <p>Agencia de marketing digital premium especializada en escalamiento de marcas mediante estrategias de alto impacto.</p>
+      <div class="f-social">
+        <a href="https://wa.me/573003083080" target="_blank" rel="noopener" class="f-soc" title="WhatsApp">💬</a>
+        <a href="https://instagram.com/308agency" target="_blank" rel="noopener" class="f-soc" title="Instagram">📸</a>
+        <a href="https://facebook.com/308agency" target="_blank" rel="noopener" class="f-soc" title="Facebook">👥</a>
+        <a href="https://tiktok.com/@308agency" target="_blank" rel="noopener" class="f-soc" title="TikTok">🎵</a>
+        <a href="https://linkedin.com/company/308agency" target="_blank" rel="noopener" class="f-soc" title="LinkedIn">💼</a>
+      </div>
+    </div>
+    <div class="f-col">
+      <h5>Páginas</h5>
+      <a href="index.html">Inicio</a>
+      <a href="awareness.html">Awareness</a>
+      <a href="consideration.html">Servicios</a>
+      <a href="conversion.html">Planes</a>
+    </div>
+    <div class="f-col">
+      <h5>Servicios</h5>
+      <a href="consideration.html">Branding Estratégico</a>
+      <a href="consideration.html">Redes Sociales</a>
+      <a href="consideration.html">Publicidad Digital</a>
+      <a href="consideration.html">SEO & Funnels</a>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <p>© 2026 308 Agency — Todos los derechos reservados</p>
+    <p>Hecho con estrategia y propósito</p>
+  </div>
 </footer>
 
-</body>
+<script>
+/* ===== HAMBURGER MENU ===== */
+const ham = document.getElementById('hamburger');
+const mobNav = document.getElementById('mobileNav');
 
+ham.addEventListener('click', () => {
+  const isOpen = ham.classList.toggle('open');
+  mobNav.classList.toggle('open');
+  ham.setAttribute('aria-expanded', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
+});
+
+mobNav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    ham.classList.remove('open');
+    mobNav.classList.remove('open');
+    ham.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  });
+});
+
+/* ===== HEADER SHRINK ON SCROLL ===== */
+const hdr = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => {
+  hdr.classList.toggle('scrolled', window.scrollY > 60);
+}, { passive: true });
+
+/* ===== SCROLL REVEAL ===== */
+const revealObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      revealObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal, .reveal-left, .reveal-right, .reveal-scale').forEach(el => {
+  revealObs.observe(el);
+});
+
+/* ===== COUNTER ANIMATION ===== */
+function animateCount(el) {
+  const target = parseInt(el.dataset.count);
+  const prefix = el.dataset.prefix || '';
+  const suffix = el.dataset.suffix || '';
+  const steps = 60;
+  const inc = target / steps;
+  let frame = 0;
+  const run = () => {
+    frame++;
+    const current = Math.min(target, Math.round(inc * frame));
+    el.textContent = prefix + current + suffix;
+    if (current < target) requestAnimationFrame(run);
+  };
+  requestAnimationFrame(run);
+}
+
+const cntObs = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.querySelectorAll('[data-count]').forEach(animateCount);
+      cntObs.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.4 });
+
+document.querySelectorAll('.hero-nums, .stats-sec').forEach(el => cntObs.observe(el));
+
+/* ===== PARTICLE GENERATOR ===== */
+const pContainer = document.getElementById('particles');
+for (let i = 0; i < 20; i++) {
+  const p = document.createElement('div');
+  p.className = 'particle';
+  const size = Math.random() * 2 + 1;
+  p.style.cssText = `left:${Math.random()*100}%;width:${size}px;height:${size}px;animation-duration:${Math.random()*12+10}s;animation-delay:${Math.random()*12}s;`;
+  pContainer.appendChild(p);
+}
+</script>
+</body>
 </html>

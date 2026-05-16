@@ -1,0 +1,531 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Planes y precios — 308 Agency. Escala tu marca con marketing digital premium. Consultoría gratuita disponible.">
+<title>Planes & Conversión | 308 Agency</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:'Poppins',sans-serif;background:#0C0B08;color:#fff;overflow-x:hidden;}
+a{text-decoration:none;}
+.logo-o{display:inline-flex;align-items:center;justify-content:center;border:2.5px solid #C9A84C;border-radius:50%;width:.8em;height:.8em;color:#C9A84C;line-height:.8;margin:0 2px;font-size:inherit;vertical-align:middle;font-weight:900;}
+.nav-logo{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:4px 14px;height:46px;transition:.25s;}
+.nav-logo img{height:34px;width:auto;display:block;max-width:160px;}
+.nav-logo:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,168,76,.35);}
+
+/* ===== NAV ===== */
+header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(12,11,8,.96);backdrop-filter:blur(12px);padding:18px 8%;border-bottom:1px solid rgba(255,255,255,.06);}
+nav{display:flex;justify-content:space-between;align-items:center;}
+.logo{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;letter-spacing:1px;}
+.logo span{color:#C9A84C;}
+.menu{display:flex;gap:32px;align-items:center;}
+.menu a{color:rgba(255,255,255,.75);font-size:.9rem;font-weight:500;transition:.3s;letter-spacing:.5px;}
+.menu a:hover,.menu a.active{color:#C9A84C;}
+.nav-cta{padding:10px 28px;border-radius:50px;background:#C9A84C;color:#fff !important;font-weight:700 !important;}
+.nav-cta:hover{background:#D4AF6A;transform:translateY(-2px);}
+
+/* ===== PAGE HERO ===== */
+.page-hero{padding:150px 8% 80px;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 20%,rgba(201,168,76,.12) 0%,transparent 55%),#0C0B08;}
+.page-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
+.urgency-bar{display:inline-flex;align-items:center;gap:10px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:50px;padding:8px 24px;margin-bottom:24px;font-size:.8rem;font-weight:600;color:#f87171;letter-spacing:.5px;}
+.urgency-dot{width:8px;height:8px;background:#ef4444;border-radius:50%;animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.2;}}
+.page-hero h1{font-family:'Montserrat',sans-serif;font-size:clamp(2.5rem,5.5vw,5rem);font-weight:900;line-height:1.05;margin-bottom:20px;letter-spacing:-1.5px;position:relative;z-index:1;}
+.page-hero h1 em{font-style:normal;background:linear-gradient(135deg,#C9A84C,#DFC27A);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;}
+.page-hero p{font-size:1.1rem;color:rgba(255,255,255,.65);max-width:580px;margin:0 auto 36px;line-height:1.8;position:relative;z-index:1;}
+.hero-ctas{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-primary{display:inline-flex;align-items:center;gap:10px;padding:17px 44px;border-radius:50px;background:linear-gradient(135deg,#C9A84C,#D4AF6A);color:#fff;font-weight:700;font-size:1rem;transition:.3s;box-shadow:0 8px 30px rgba(201,168,76,.3);}
+.btn-primary:hover{transform:translateY(-4px);box-shadow:0 16px 44px rgba(201,168,76,.45);}
+.btn-ghost{display:inline-flex;align-items:center;gap:10px;padding:17px 44px;border-radius:50px;border:1px solid rgba(255,255,255,.2);color:#fff;font-weight:600;font-size:1rem;transition:.3s;}
+.btn-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
+
+/* ===== SHARED ===== */
+.section-label{text-align:center;font-size:.78rem;font-weight:700;letter-spacing:3px;color:#C9A84C;text-transform:uppercase;margin-bottom:14px;}
+.section-title{text-align:center;font-family:'Montserrat',sans-serif;font-size:clamp(1.8rem,3.5vw,3rem);font-weight:800;line-height:1.2;margin-bottom:16px;}
+.section-sub{text-align:center;font-size:.95rem;color:rgba(255,255,255,.6);max-width:560px;margin:0 auto 60px;line-height:1.8;}
+
+/* ===== VALUE PROP ===== */
+.value-prop{padding:80px 8%;background:#0A0905;}
+.vp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:24px;}
+.vp-item{text-align:center;padding:36px 24px;background:#131109;border-radius:20px;border:1px solid rgba(255,255,255,.05);transition:.3s;}
+.vp-item:hover{transform:translateY(-6px);border-color:rgba(201,168,76,.2);}
+.vp-icon{font-size:2.2rem;margin-bottom:14px;}
+.vp-item h4{font-size:1rem;font-weight:700;margin-bottom:8px;}
+.vp-item p{font-size:.85rem;color:rgba(255,255,255,.6);line-height:1.65;}
+
+/* ===== PRICING ===== */
+.pricing{padding:100px 8%;}
+.pricing-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:28px;margin-top:60px;align-items:start;}
+.plan{background:#131109;border:1px solid rgba(255,255,255,.06);border-radius:28px;padding:44px 36px;position:relative;transition:.3s;}
+.plan:hover{transform:translateY(-8px);}
+.plan.featured{background:linear-gradient(145deg,#181612,#1A1714);border-color:rgba(201,168,76,.35);box-shadow:0 20px 70px rgba(201,168,76,.12);}
+.plan-badge{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,#C9A84C,#D4AF6A);color:#fff;font-size:.75rem;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:6px 20px;border-radius:50px;white-space:nowrap;}
+.plan-name{font-size:.8rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:12px;}
+.plan-price{font-family:'Montserrat',sans-serif;font-size:3.2rem;font-weight:900;line-height:1;margin-bottom:6px;}
+.plan-price sup{font-size:1.4rem;vertical-align:top;margin-top:8px;color:rgba(255,255,255,.7);}
+.plan-price .period{font-size:.9rem;font-weight:400;color:rgba(255,255,255,.5);}
+.plan-desc{font-size:.88rem;color:rgba(255,255,255,.6);line-height:1.6;margin:16px 0 28px;}
+.plan-divider{height:1px;background:rgba(255,255,255,.07);margin-bottom:28px;}
+.plan-features{list-style:none;display:flex;flex-direction:column;gap:12px;margin-bottom:32px;}
+.plan-features li{display:flex;align-items:flex-start;gap:10px;font-size:.88rem;color:rgba(255,255,255,.75);}
+.plan-features li::before{content:'✓';color:#10b981;font-weight:700;flex-shrink:0;margin-top:1px;}
+.plan-features li.disabled{color:rgba(255,255,255,.3);}
+.plan-features li.disabled::before{content:'—';color:rgba(255,255,255,.2);}
+.plan-cta{display:block;text-align:center;padding:15px 30px;border-radius:50px;font-weight:700;font-size:.95rem;transition:.3s;}
+.plan-cta-main{background:linear-gradient(135deg,#C9A84C,#D4AF6A);color:#fff;box-shadow:0 8px 28px rgba(201,168,76,.3);}
+.plan-cta-main:hover{transform:translateY(-3px);box-shadow:0 14px 40px rgba(201,168,76,.45);}
+.plan-cta-ghost{border:1px solid rgba(255,255,255,.2);color:#fff;}
+.plan-cta-ghost:hover{border-color:rgba(255,255,255,.5);background:rgba(255,255,255,.05);}
+.plan-note{font-size:.78rem;color:rgba(255,255,255,.4);text-align:center;margin-top:12px;}
+
+/* ===== PORTFOLIO ===== */
+.portfolio{padding:100px 8%;background:#0A0905;}
+.portfolio-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px;margin-top:60px;}
+.portfolio-item{background:#131109;border-radius:20px;overflow:hidden;border:1px solid rgba(255,255,255,.05);transition:.4s;cursor:pointer;}
+.portfolio-item:hover{transform:translateY(-8px);border-color:rgba(201,168,76,.3);}
+.portfolio-thumb{height:180px;display:flex;align-items:center;justify-content:center;font-size:3rem;position:relative;}
+.portfolio-thumb::after{content:'';position:absolute;inset:0;opacity:.4;}
+.pt-1{background:linear-gradient(135deg,#1A1714,#201D16);}
+.pt-2{background:linear-gradient(135deg,#0C0B08,#181612);}
+.pt-3{background:linear-gradient(135deg,#0F0D0A,#1A1714);}
+.pt-4{background:linear-gradient(135deg,#0C0B08,#1A1714);}
+.portfolio-info{padding:22px 24px;}
+.portfolio-info h4{font-size:1rem;font-weight:700;margin-bottom:6px;}
+.portfolio-info p{font-size:.83rem;color:rgba(255,255,255,.55);}
+.portfolio-tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:10px;}
+.ptag{background:rgba(255,255,255,.06);border-radius:50px;padding:4px 12px;font-size:.72rem;color:rgba(255,255,255,.55);}
+
+/* ===== GUARANTEES ===== */
+.guarantees{padding:80px 8%;}
+.guarantees-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px;margin-top:50px;}
+.guarantee{background:linear-gradient(145deg,#131109,#181612);border:1px solid rgba(255,255,255,.06);border-radius:20px;padding:36px 28px;text-align:center;transition:.3s;}
+.guarantee:hover{border-color:rgba(16,185,129,.3);}
+.g-icon{font-size:2.4rem;margin-bottom:16px;}
+.guarantee h4{font-size:1rem;font-weight:700;margin-bottom:10px;}
+.guarantee p{font-size:.87rem;color:rgba(255,255,255,.6);line-height:1.65;}
+
+/* ===== CONTACT ===== */
+.contact{padding:100px 8%;background:#0A0905;}
+.contact-inner{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start;}
+.contact-left h2{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,3.5vw,3rem);font-weight:800;line-height:1.2;margin-bottom:20px;}
+.contact-left p{font-size:.95rem;color:rgba(255,255,255,.7);line-height:1.85;margin-bottom:30px;}
+.contact-info{display:flex;flex-direction:column;gap:16px;}
+.contact-item{display:flex;align-items:center;gap:14px;font-size:.9rem;color:rgba(255,255,255,.7);}
+.contact-item .ci-icon{width:40px;height:40px;border-radius:10px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;}
+.form-card{background:#131109;border:1px solid rgba(255,255,255,.07);border-radius:24px;padding:44px 40px;}
+.form-title{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:800;margin-bottom:8px;}
+.form-sub{font-size:.87rem;color:rgba(255,255,255,.55);margin-bottom:28px;}
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:.82rem;font-weight:600;color:rgba(255,255,255,.7);margin-bottom:8px;letter-spacing:.5px;text-transform:uppercase;}
+.form-group input,
+.form-group select,
+.form-group textarea{width:100%;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:12px;padding:14px 18px;color:#fff;font-family:'Poppins',sans-serif;font-size:.9rem;outline:none;transition:.3s;}
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.04);}
+.form-group select option{background:#131109;color:#fff;}
+.form-group textarea{resize:vertical;min-height:110px;}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;}
+.form-submit{width:100%;padding:17px;border-radius:12px;background:linear-gradient(135deg,#C9A84C,#D4AF6A);color:#fff;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;border:none;cursor:pointer;transition:.3s;letter-spacing:.5px;box-shadow:0 8px 30px rgba(201,168,76,.3);}
+.form-submit:hover{transform:translateY(-3px);box-shadow:0 14px 44px rgba(201,168,76,.45);}
+.form-note{font-size:.78rem;color:rgba(255,255,255,.35);text-align:center;margin-top:14px;}
+
+/* ===== URGENCY ===== */
+.urgency-section{padding:60px 8%;}
+.urgency-inner{background:linear-gradient(135deg,#1a0505,#2d0505);border:1px solid rgba(239,68,68,.2);border-radius:24px;padding:50px 60px;display:flex;align-items:center;justify-content:space-between;gap:30px;flex-wrap:wrap;}
+.urgency-text h3{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:800;margin-bottom:8px;}
+.urgency-text p{font-size:.9rem;color:rgba(255,255,255,.65);}
+.urgency-text strong{color:#f87171;}
+.urgency-cta{display:flex;align-items:center;gap:16px;flex-shrink:0;}
+.btn-danger{padding:17px 44px;border-radius:50px;background:linear-gradient(135deg,#ef4444,#dc2626);color:#fff;font-weight:700;font-size:1rem;transition:.3s;box-shadow:0 8px 28px rgba(239,68,68,.3);}
+.btn-danger:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(239,68,68,.45);}
+
+/* ===== FINAL CTA ===== */
+.final-cta{margin:0 8% 100px;background:linear-gradient(135deg,#C9A84C 0%,#ff5500 40%,#c23400 100%);border-radius:30px;padding:80px 60px;text-align:center;position:relative;overflow:hidden;}
+.final-cta::before{content:'308';position:absolute;font-family:'Montserrat',sans-serif;font-size:20rem;font-weight:900;color:rgba(255,255,255,.05);top:50%;left:50%;transform:translate(-50%,-50%);pointer-events:none;letter-spacing:-10px;}
+.final-cta h2{font-family:'Montserrat',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;margin-bottom:16px;position:relative;z-index:1;}
+.final-cta p{font-size:1.1rem;color:rgba(255,255,255,.85);margin-bottom:36px;max-width:580px;margin-left:auto;margin-right:auto;position:relative;z-index:1;}
+.final-cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;position:relative;z-index:1;}
+.btn-white{padding:17px 44px;border-radius:50px;background:#fff;color:#C9A84C;font-weight:800;font-size:1rem;transition:.3s;}
+.btn-white:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.3);}
+.btn-dark{padding:17px 44px;border-radius:50px;background:rgba(0,0,0,.3);color:#fff;font-weight:600;font-size:1rem;border:1px solid rgba(255,255,255,.3);transition:.3s;}
+.btn-dark:hover{background:rgba(0,0,0,.5);transform:translateY(-4px);}
+
+/* ===== FOOTER ===== */
+footer{background:#080604;padding:60px 8% 30px;border-top:1px solid rgba(255,255,255,.06);}
+.footer-top{display:grid;grid-template-columns:2fr 1fr 1fr;gap:60px;margin-bottom:50px;}
+.footer-brand .logo-text{display:block;margin-bottom:16px;font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;color:#fff;}
+.footer-brand .logo-text span{color:#C9A84C;}
+.footer-brand p{font-size:.9rem;color:rgba(255,255,255,.5);line-height:1.8;max-width:300px;}
+.footer-col h5{font-size:.82rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.5);margin-bottom:20px;}
+.footer-col a{display:block;color:rgba(255,255,255,.6);font-size:.9rem;margin-bottom:10px;transition:.3s;}
+.footer-col a:hover{color:#C9A84C;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.06);padding-top:28px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer-bottom p{font-size:.85rem;color:rgba(255,255,255,.4);}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:1024px){
+  .contact-inner{grid-template-columns:1fr;gap:40px;}
+  .footer-top{grid-template-columns:1fr 1fr;}
+}
+@media(max-width:768px){
+  .menu{display:none;}
+  .page-hero{padding:120px 6% 60px;}
+  .value-prop,.pricing,.portfolio,.guarantees,.contact,.urgency-section{padding:70px 6%;}
+  .urgency-inner{padding:36px 28px;}
+  .form-card{padding:32px 24px;}
+  .form-row{grid-template-columns:1fr;}
+  .final-cta{margin:0 6% 70px;padding:50px 28px;}
+  .footer-top{grid-template-columns:1fr;gap:36px;}
+  .footer-bottom{flex-direction:column;text-align:center;}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<header>
+  <nav>
+    <a href="index.html" class="nav-logo"><img src="imagenes 308 agency/logo 2.png" alt="308 Agency"></a>
+    <div class="menu">
+      <a href="index.html">Inicio</a>
+      <a href="awareness.html">Awareness</a>
+      <a href="consideration.html">Servicios</a>
+      <a href="conversion.html" class="active">Conversión</a>
+      <a href="#contacto" class="nav-cta">Agendar Consultoría</a>
+    </div>
+  </nav>
+</header>
+
+<!-- PAGE HERO -->
+<section class="page-hero">
+  <div class="urgency-bar"><div class="urgency-dot"></div>Solo 3 cupos disponibles este mes</div>
+  <h1>Transforma tu marca.<br><em>Empieza hoy.</em></h1>
+  <p>Has visto lo que hacemos y cómo lo hacemos. El siguiente paso es simple: habla con nuestro equipo y lanza tu estrategia.</p>
+  <div class="hero-ctas">
+    <a href="#contacto" class="btn-primary">Agendar Consultoría Gratuita ›</a>
+    <a href="#planes" class="btn-ghost">Ver Planes y Precios</a>
+  </div>
+</section>
+
+<!-- VALUE PROP -->
+<section class="value-prop">
+  <div class="vp-grid">
+    <div class="vp-item">
+      <div class="vp-icon">🛡️</div>
+      <h4>Garantía de resultados</h4>
+      <p>Si en 90 días no ves mejoras medibles, te devolvemos tu inversión. Sin preguntas.</p>
+    </div>
+    <div class="vp-item">
+      <div class="vp-icon">⚡</div>
+      <h4>Onboarding en 48h</h4>
+      <p>Desde la firma del contrato hasta el inicio de implementación en menos de 48 horas.</p>
+    </div>
+    <div class="vp-item">
+      <div class="vp-icon">🤝</div>
+      <h4>Manager dedicado</h4>
+      <p>Un experto asignado exclusivamente a tu cuenta. Comunicación directa, sin intermediarios.</p>
+    </div>
+    <div class="vp-item">
+      <div class="vp-icon">📊</div>
+      <h4>Dashboard en tiempo real</h4>
+      <p>Acceso total a métricas y resultados de tus campañas, las 24 horas los 7 días.</p>
+    </div>
+    <div class="vp-item">
+      <div class="vp-icon">🔄</div>
+      <h4>Optimización semanal</h4>
+      <p>Revisamos y ajustamos tu estrategia cada semana para maximizar el rendimiento.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PRICING -->
+<section class="pricing" id="planes">
+  <div class="section-label">Planes y Precios</div>
+  <h2 class="section-title">Invierte en crecimiento real</h2>
+  <p class="section-sub">Elige el plan que mejor se adapta a tus objetivos y presupuesto. Todos incluyen consultoría gratuita de arranque.</p>
+  <div class="pricing-grid">
+
+    <!-- STARTER -->
+    <div class="plan">
+      <div class="plan-name">Starter</div>
+      <div class="plan-price"><sup>$</sup>1,200<span class="period">/mes</span></div>
+      <p class="plan-desc">Ideal para negocios que quieren establecer su presencia digital con una estrategia sólida.</p>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Gestión de 2 redes sociales</li>
+        <li>12 publicaciones mensuales</li>
+        <li>Campañas Meta Ads básicas</li>
+        <li>Reportes mensuales</li>
+        <li>Soporte por correo</li>
+        <li class="disabled">Branding y diseño web</li>
+        <li class="disabled">SEO y posicionamiento</li>
+        <li class="disabled">Automatización</li>
+      </ul>
+      <a href="#contacto" class="plan-cta plan-cta-ghost">Comenzar ›</a>
+      <p class="plan-note">Consultoría inicial gratuita incluida</p>
+    </div>
+
+    <!-- GROWTH — FEATURED -->
+    <div class="plan featured">
+      <div class="plan-badge">Más popular</div>
+      <div class="plan-name">Growth</div>
+      <div class="plan-price" style="background:linear-gradient(135deg,#C9A84C,#C9A84C);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;"><sup style="-webkit-text-fill-color:rgba(255,255,255,.7);">$</sup>2,800<span class="period" style="-webkit-text-fill-color:rgba(255,255,255,.5);">/mes</span></div>
+      <p class="plan-desc">Para marcas que quieren escalar agresivamente con una estrategia 360° integrada.</p>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Gestión de 4 redes sociales</li>
+        <li>24 publicaciones + stories diarias</li>
+        <li>Meta Ads + Google Ads gestionados</li>
+        <li>SEO básico + content marketing</li>
+        <li>Landing page de alta conversión</li>
+        <li>Automatización de emails</li>
+        <li>Reportes semanales + dashboard</li>
+        <li>Manager dedicado a tu cuenta</li>
+      </ul>
+      <a href="#contacto" class="plan-cta plan-cta-main">Quiero este plan ›</a>
+      <p class="plan-note">Consultoría inicial gratuita incluida</p>
+    </div>
+
+    <!-- PREMIUM -->
+    <div class="plan">
+      <div class="plan-name">Premium</div>
+      <div class="plan-price"><sup>$</sup>5,500<span class="period">/mes</span></div>
+      <p class="plan-desc">La solución completa para marcas que quieren un ecosistema digital de clase mundial.</p>
+      <div class="plan-divider"></div>
+      <ul class="plan-features">
+        <li>Todo lo del plan Growth</li>
+        <li>Branding completo y manual de marca</li>
+        <li>Diseño web premium + optimización CRO</li>
+        <li>SEO avanzado + link building</li>
+        <li>Funnels de venta personalizados</li>
+        <li>Automatización avanzada + CRM</li>
+        <li>TikTok Ads + influencer marketing</li>
+        <li>Reuniones estratégicas quincenales</li>
+      </ul>
+      <a href="#contacto" class="plan-cta plan-cta-ghost">Contactar equipo ›</a>
+      <p class="plan-note">Precio personalizado disponible</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="portfolio">
+  <div class="section-label">Portafolio</div>
+  <h2 class="section-title">Resultados que hablan por sí solos</h2>
+  <p class="section-sub">Proyectos reales ejecutados por nuestro equipo con impacto medible en el negocio de nuestros clientes.</p>
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <div class="portfolio-thumb pt-1">🏢</div>
+      <div class="portfolio-info">
+        <h4>Rebranding Corporativo</h4>
+        <p>Identidad visual completa para firma de consultoría. +220% en reconocimiento de marca.</p>
+        <div class="portfolio-tags">
+          <span class="ptag">Branding</span>
+          <span class="ptag">Diseño</span>
+          <span class="ptag">Estrategia</span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-thumb pt-2">🛒</div>
+      <div class="portfolio-info">
+        <h4>E-commerce Escalado</h4>
+        <p>De $15K a $120K mensuales en 6 meses con Meta Ads + SEO + funnel de ventas.</p>
+        <div class="portfolio-tags">
+          <span class="ptag">Meta Ads</span>
+          <span class="ptag">SEO</span>
+          <span class="ptag">Funnels</span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-thumb pt-3">📱</div>
+      <div class="portfolio-info">
+        <h4>Lanzamiento de App</h4>
+        <p>Estrategia de lanzamiento digital que generó 8,000 usuarios en los primeros 30 días.</p>
+        <div class="portfolio-tags">
+          <span class="ptag">Lanzamiento</span>
+          <span class="ptag">Publicidad</span>
+          <span class="ptag">Redes</span>
+        </div>
+      </div>
+    </div>
+    <div class="portfolio-item">
+      <div class="portfolio-thumb pt-4">🌿</div>
+      <div class="portfolio-info">
+        <h4>Marca Personal Premium</h4>
+        <p>Posicionamiento de speaker como referente en su industria. +50K seguidores en 4 meses.</p>
+        <div class="portfolio-tags">
+          <span class="ptag">Personal Brand</span>
+          <span class="ptag">Contenido</span>
+          <span class="ptag">Ads</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GUARANTEES -->
+<section class="guarantees">
+  <div class="section-label">Nuestras Garantías</div>
+  <h2 class="section-title">Trabajamos con<br>riesgo cero para ti</h2>
+  <p class="section-sub">Nos comprometemos con resultados porque confiamos en lo que hacemos.</p>
+  <div class="guarantees-grid">
+    <div class="guarantee">
+      <div class="g-icon">🔒</div>
+      <h4>Garantía de 90 días</h4>
+      <p>Si en 90 días no generamos resultados medibles y acordados, te devolvemos tu inversión íntegra.</p>
+    </div>
+    <div class="guarantee">
+      <div class="g-icon">📋</div>
+      <h4>Transparencia total</h4>
+      <p>Acceso a todos los datos, métricas y estrategias de tu cuenta en todo momento, sin restricciones.</p>
+    </div>
+    <div class="guarantee">
+      <div class="g-icon">🚫</div>
+      <h4>Sin contratos trampa</h4>
+      <p>Contratos mensuales. Si no estás satisfecho con los resultados, puedes salir sin penalizaciones.</p>
+    </div>
+    <div class="guarantee">
+      <div class="g-icon">🤝</div>
+      <h4>Exclusividad de mercado</h4>
+      <p>No trabajamos con dos empresas del mismo sector en la misma región. Tu ventaja competitiva está protegida.</p>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency-section">
+  <div class="urgency-inner">
+    <div class="urgency-text">
+      <h3>⏰ Cupos limitados — Mayo 2026</h3>
+      <p>Solo aceptamos <strong>3 clientes nuevos por mes</strong> para garantizar la calidad del servicio. Quedan <strong>2 cupos disponibles</strong> para este mes.</p>
+    </div>
+    <div class="urgency-cta">
+      <a href="#contacto" class="btn-danger">Reservar mi cupo ahora</a>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contacto">
+  <div class="contact-inner">
+    <div class="contact-left">
+      <h2>Hablemos de tu negocio</h2>
+      <p>Agenda una consultoría estratégica gratuita de 30 minutos. Sin compromisos, sin presión. Solo una conversación honesta sobre cómo podemos hacer crecer tu marca.</p>
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="ci-icon">📧</div>
+          <span>hola@308agency.com</span>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📱</div>
+          <span>+1 (555) 388-0001</span>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">📍</div>
+          <span>Operación 100% remota — Clientes globales</span>
+        </div>
+        <div class="contact-item">
+          <div class="ci-icon">⏰</div>
+          <span>Respuesta en menos de 2 horas hábiles</span>
+        </div>
+      </div>
+    </div>
+    <div class="form-card">
+      <h3 class="form-title">Consultoría Gratuita</h3>
+      <p class="form-sub">Completa el formulario y nos comunicamos contigo hoy mismo.</p>
+      <form onsubmit="handleSubmit(event)">
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre *</label>
+            <input type="text" placeholder="Tu nombre" required autocomplete="name">
+          </div>
+          <div class="form-group">
+            <label>Empresa *</label>
+            <input type="text" placeholder="Nombre de tu empresa" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label>Correo electrónico *</label>
+          <input type="email" placeholder="tu@empresa.com" required autocomplete="email">
+        </div>
+        <div class="form-group">
+          <label>¿Qué servicio te interesa?</label>
+          <select>
+            <option value="">Selecciona un servicio</option>
+            <option>Branding Estratégico</option>
+            <option>Publicidad Digital (Ads)</option>
+            <option>Diseño Web Premium</option>
+            <option>SEO Estratégico</option>
+            <option>Automatización Digital</option>
+            <option>Funnels de Venta</option>
+            <option>Estrategia 360° Completa</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label>¿Cuál es tu objetivo principal?</label>
+          <textarea placeholder="Cuéntanos brevemente qué quieres lograr con tu marca en los próximos 6 meses..."></textarea>
+        </div>
+        <button type="submit" class="form-submit">Agendar Consultoría Gratuita →</button>
+        <p class="form-note">🔒 Tu información está segura. Nunca compartimos datos con terceros.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<div class="final-cta">
+  <h2>El mejor momento para<br>escalar tu marca es ahora</h2>
+  <p>Cada día que pasa sin una estrategia digital es un día que tu competencia te gana terreno. No esperes más.</p>
+  <div class="final-cta-btns">
+    <a href="#contacto" class="btn-white">Agendar Ahora — Es Gratis</a>
+    <a href="consideration.html" class="btn-dark">Revisar Servicios</a>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <span class="logo-text">3<span class='logo-o'>0</span>8 <span>Agency</span></span>
+      <p>Agencia de marketing digital premium especializada en escalamiento de marcas mediante estrategias de alto impacto.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Páginas</h5>
+      <a href="index.html">Inicio</a>
+      <a href="awareness.html">Awareness</a>
+      <a href="consideration.html">Servicios</a>
+      <a href="conversion.html">Conversión</a>
+    </div>
+    <div class="footer-col">
+      <h5>Servicios</h5>
+      <a href="consideration.html">Branding</a>
+      <a href="consideration.html">Publicidad Digital</a>
+      <a href="consideration.html">SEO</a>
+      <a href="consideration.html">Automatización</a>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 308 Agency — Todos los derechos reservados</p>
+    <p>Diseñado para escalar marcas premium</p>
+  </div>
+</footer>
+
+<script>
+function handleSubmit(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.form-submit');
+  btn.textContent = '✓ ¡Mensaje enviado! Te contactamos pronto.';
+  btn.style.background = 'linear-gradient(135deg,#10b981,#059669)';
+  btn.disabled = true;
+}
+</script>
+
+</body>
+</html>

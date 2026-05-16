@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>308 Agency | Marketing Digital Premium</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0C0B08;
+    color:white;
+    overflow-x:hidden;
+}
+
+a{
+    text-decoration:none;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(12,11,8,.95);
+    backdrop-filter:blur(10px);
+    padding:20px 8%;
+}
+
+nav{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:2rem;
+    font-weight:800;
+}
+
+.logo span{
+    color:#C9A84C;
+}
+
+.nav-logo{display:inline-flex;align-items:center;background:#fff;border-radius:8px;padding:4px 14px;height:46px;transition:.25s;}
+.nav-logo img{height:34px;width:auto;display:block;}
+.nav-logo:hover{transform:translateY(-2px);box-shadow:0 6px 24px rgba(201,168,76,.35);}
+
+.menu{
+    display:flex;
+    gap:30px;
+}
+
+.menu a{
+    color:white;
+    transition:.3s;
+}
+
+.menu a:hover{
+    color:#C9A84C;
+}
+
+.hero{
+    height:100vh;
+    display:flex;
+    align-items:center;
+    padding:0 8%;
+    background:
+    linear-gradient(rgba(0,0,0,.75),rgba(0,0,0,.75)),
+    url('assets/img/hero.jpg') center/cover;
+}
+
+.hero-content{
+    max-width:700px;
+}
+
+.hero h1{
+    font-size:4.5rem;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.hero p{
+    font-size:1.2rem;
+    margin-bottom:40px;
+    color:#d1d5db;
+}
+
+.btn{
+    display:inline-block;
+    padding:16px 40px;
+    border-radius:50px;
+    background:#C9A84C;
+    color:white;
+    font-weight:700;
+    transition:.3s;
+}
+
+.btn:hover{
+    transform:translateY(-5px);
+    background:#D4AF6A;
+}
+
+.section{
+    padding:100px 8%;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:60px;
+}
+
+.section-title h2{
+    font-size:3rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:30px;
+}
+
+.card{
+    background:#181612;
+    padding:40px;
+    border-radius:20px;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-10px);
+}
+
+.card h3{
+    color:#C9A84C;
+    margin-bottom:20px;
+}
+
+.stats{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.stat-box{
+    background:#181612;
+    padding:50px;
+    text-align:center;
+    border-radius:20px;
+}
+
+.stat-box h3{
+    font-size:3rem;
+    color:#C9A84C;
+}
+
+.cta{
+    background:linear-gradient(90deg,#1A1714,#C9A84C);
+    padding:80px;
+    border-radius:25px;
+    text-align:center;
+}
+
+footer{
+    background:#080604;
+    padding:40px;
+    text-align:center;
+}
+
+@media(max-width:768px){
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+
+    .menu{
+        display:none;
+    }
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<nav>
+
+<a href="index.html" class="nav-logo"><img src="imagenes 308 agency/logo 2.png" alt="308 Agency"></a>
+
+<div class="menu">
+<a href="index.html">Inicio</a>
+<a href="awareness.html">Awareness</a>
+<a href="consideration.html">Servicios</a>
+<a href="conversion.html">Conversión</a>
+</div>
+
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+Escalamos marcas mediante estrategias digitales de alto impacto
+</h1>
+
+<p>
+Creamos experiencias digitales enfocadas en crecimiento, posicionamiento y conversión empresarial.
+</p>
+
+<a href="conversion.html" class="btn">
+Agenda una Consultoría
+</a>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="section-title">
+<h2>¿Por qué elegir 308 Agency?</h2>
+</div>
+
+<div class="grid">
+
+<div class="card">
+<h3>Branding Premium</h3>
+<p>
+Construimos marcas memorables enfocadas en autoridad y crecimiento empresarial.
+</p>
+</div>
+
+<div class="card">
+<h3>Automatización</h3>
+<p>
+Optimizamos procesos para generar clientes potenciales automáticamente.
+</p>
+</div>
+
+<div class="card">
+<h3>Growth Marketing</h3>
+<p>
+Estrategias digitales diseñadas para aumentar ventas y reconocimiento.
+</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="stats">
+
+<div class="stat-box">
+<h3>+120%</h3>
+<p>Crecimiento Promedio</p>
+</div>
+
+<div class="stat-box">
+<h3>+300</h3>
+<p>Campañas Ejecutadas</p>
+</div>
+
+<div class="stat-box">
+<h3>+50</h3>
+<p>Marcas Escaladas</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<div class="cta">
+
+<h2 style="font-size:3rem;margin-bottom:20px;">
+Transforma tu negocio hoy
+</h2>
+
+<p style="margin-bottom:30px;">
+Lleva tu marca al siguiente nivel con estrategias digitales premium.
+</p>
+
+<a href="conversion.html" class="btn">
+Comenzar Ahora
+</a>
+
+</div>
+
+</section>
+
+<footer>
+
+<p>
+© 2026 308 Agency — Todos los derechos reservados
+</p>
+
+</footer>
+
+</body>
+
+</html>

@@ -51,6 +51,7 @@ header.scrolled{background:rgba(255,255,255,.99) !important;padding:12px 8% !imp
 
 /* ===== PAGE HERO ===== */
 .page-hero{padding:150px 8% 80px;text-align:center;position:relative;overflow:hidden;background:radial-gradient(ellipse at 50% 20%,rgba(27,58,107,.12) 0%,transparent 55%),#FFFFFF;}
+.hero-logo-mob{display:none;}
 .page-hero::before{content:'';position:absolute;top:0;left:0;right:0;bottom:0;background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none'%3E%3Cg fill='%23ffffff' fill-opacity='0.015'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");pointer-events:none;}
 .urgency-bar{display:inline-flex;align-items:center;gap:10px;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.3);border-radius:50px;padding:8px 24px;margin-bottom:24px;font-size:.8rem;font-weight:600;color:#f87171;letter-spacing:.5px;}
 .urgency-dot{width:8px;height:8px;background:#ef4444;border-radius:50%;animation:blink 1.2s infinite;}
@@ -204,6 +205,7 @@ footer{background:#EAF1F9;padding:60px 8% 30px;border-top:1px solid rgba(0,0,0,.
   .footer-top{grid-template-columns:1fr 1fr;}
   .sc-social-grid{grid-template-columns:repeat(2,1fr);}
   .pricing-grid{grid-template-columns:repeat(2,1fr);}
+  .hero-logo-mob{display:block;height:54px;width:auto;margin:0 auto 28px;filter:drop-shadow(0 4px 14px rgba(27,58,107,.15));}
 }
 @media(max-width:768px){
   .menu{display:none;}
@@ -274,6 +276,7 @@ footer{background:#EAF1F9;padding:60px 8% 30px;border-top:1px solid rgba(0,0,0,.
 
 <!-- PAGE HERO -->
 <section class="page-hero">
+  <img src="imagenes 308 agency/logo 2.png" alt="308 Agency" class="hero-logo-mob">
   <div class="urgency-bar"><div class="urgency-dot"></div>Auditoría gratuita disponible hoy — Cupos limitados</div>
   <h1>Plan personalizado<br><em>para tu empresa.</em></h1>
   <p>Elegiste el mejor camino: hablar con un equipo que entiende cómo hacer que tu negocio venda más a través de redes sociales y publicidad digital.</p>

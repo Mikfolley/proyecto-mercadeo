@@ -61,11 +61,16 @@ nav{display:flex;justify-content:space-between;align-items:center;}
 .particle{position:absolute;background:#1A1A18;border-radius:50%;animation:floatParticle linear infinite;opacity:0;}
 @keyframes floatParticle{0%{transform:translateY(100vh);opacity:0;}10%{opacity:.5;}90%{opacity:.3;}100%{transform:translateY(-10vh) translateX(40px);opacity:0;}}
 .hero-inner{position:relative;z-index:1;}
-.hero-layout{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;width:100%;z-index:1;position:relative;}
+.hero-layout{display:grid;grid-template-columns:1.2fr 0.65fr 0.75fr;gap:40px;align-items:center;width:100%;z-index:1;position:relative;}
+.hero-team-col{display:flex;align-items:center;justify-content:center;}
+.hero-team-col img{width:100%;max-width:280px;height:400px;object-fit:cover;object-position:center top;border-radius:22px;border:1px solid rgba(26,26,24,.1);box-shadow:0 24px 60px rgba(26,26,24,.15);display:block;transition:.6s ease;}
+.hero-team-col img:hover{transform:scale(1.03);}
 
 /* ===== HERO VISUAL ===== */
 .hero-visual{display:flex;align-items:center;justify-content:center;}
 .hero-card{position:relative;padding:70px;}
+.hero-team-mini{position:absolute;bottom:-14px;left:50%;transform:translateX(-50%);width:160px;border-radius:14px;overflow:hidden;border:2px solid rgba(26,26,24,.14);box-shadow:0 10px 28px rgba(0,0,0,.18);z-index:4;}
+.hero-team-mini img{width:100%;height:100px;object-fit:cover;object-position:center top;display:block;}
 .logo-glow{position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(26,26,24,.18),transparent 65%);border-radius:50%;animation:heroGlow 4s ease infinite;pointer-events:none;}
 @keyframes heroGlow{0%,100%{opacity:.6;transform:scale(1);}50%{opacity:1;transform:scale(1.1);}}
 .ring{position:absolute;border-radius:50%;top:50%;left:50%;pointer-events:none;}
@@ -202,6 +207,7 @@ footer{background:#E8E2D4;padding:52px 6% 24px;border-top:1px solid rgba(0,0,0,.
 @media(max-width:1024px){
   .hero-layout{grid-template-columns:1fr;}
   .hero-visual{display:none;}
+  .hero-team-col{display:none;}
   .social-inner{grid-template-columns:1fr;gap:44px;}
   .stats-grid{grid-template-columns:repeat(2,1fr);}
   .why-grid{grid-template-columns:repeat(2,1fr);}
@@ -384,6 +390,11 @@ em{color:#C8A456;}</style>
     </div>
   </div><!-- end hero-inner -->
 
+  <!-- HERO TEAM PHOTO -->
+  
+    <img src="imagenes 308 agency/grupo.png" alt="Equipo 308 Agency">
+
+
   <!-- HERO VISUAL: Logo + rings + floating stats -->
   <div class="hero-visual">
     <div class="hero-card">
@@ -402,6 +413,7 @@ em{color:#C8A456;}</style>
         <div class="fv">50+</div>
         <div class="fl">Marcas escaladas</div>
       </div>
+      
     </div>
   </div>
 
